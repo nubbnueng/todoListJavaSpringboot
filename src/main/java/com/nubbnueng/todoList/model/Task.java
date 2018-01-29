@@ -27,7 +27,7 @@ public class Task implements Serializable {
 	private String content;
 	
 	@NotBlank
-	private boolean status;
+	private TaskStatus status;
 
 	@Column(nullable = false, updatable = false)
 	@Temporal(TemporalType.TIMESTAMP)
@@ -63,11 +63,11 @@ public class Task implements Serializable {
 		this.content = content;
 	}
 
-	public boolean isStatus() {
+	public TaskStatus getStatus() {
 		return status;
 	}
 
-	public void setStatus(boolean status) {
+	public void setStatus(TaskStatus status) {
 		this.status = status;
 	}
 
