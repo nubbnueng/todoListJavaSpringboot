@@ -7,6 +7,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -26,7 +27,10 @@ public class Task implements Serializable {
 	@NotBlank
 	private String content;
 	
-	@NotBlank
+//	@NotNull
+//	private boolean done;
+	
+	@NotNull
 	private TaskStatus status;
 
 	@Column(nullable = false, updatable = false)
@@ -63,6 +67,14 @@ public class Task implements Serializable {
 		this.content = content;
 	}
 
+//	public boolean isDone() {
+//		return done;
+//	}
+//
+//	public void setDone(boolean done) {
+//		this.done = done;
+//	}
+
 	public TaskStatus getStatus() {
 		return status;
 	}
@@ -70,7 +82,7 @@ public class Task implements Serializable {
 	public void setStatus(TaskStatus status) {
 		this.status = status;
 	}
-
+	
 	public Date getCreatedAt() {
 		return createdAt;
 	}

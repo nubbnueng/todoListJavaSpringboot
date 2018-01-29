@@ -56,6 +56,7 @@ public class TodoListController {
 		
 		task.setSubject(taskDetail.getSubject());
 		task.setContent(taskDetail.getContent());
+//		task.setDone(taskDetail.isDone());
 		task.setStatus(taskDetail.getStatus());
 		
 		Task updatedTask = todoListRepository.save(task);
