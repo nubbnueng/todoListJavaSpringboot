@@ -20,7 +20,7 @@ import com.nubbnueng.todoList.model.TaskStatus;
 import com.nubbnueng.todoList.repository.TodoListRepository;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/v1/todolist")
 public class TodoListController {
 
 	@Autowired
